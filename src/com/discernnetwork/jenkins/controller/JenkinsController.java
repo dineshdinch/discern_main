@@ -31,6 +31,6 @@ public class JenkinsController {
 		} else {
 			message = "not valid";
 		}	
-        return "the message is " + message;
+        return message;
     }
 }

@@ -11,6 +11,7 @@ node {
 				echo "Into try block"
 			} catch(err) {
 				echo "Into catch block"
+				throw err
 				if(currentBuild.result == 'UNSTABLE') {
 					currentBuild.result = 'FAILURE'
 				}

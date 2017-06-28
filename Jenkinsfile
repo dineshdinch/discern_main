@@ -15,6 +15,6 @@ node {
 		stage "Compiling the Project"
 			bat "ant war"
 		stage "Completion Process"    
-			echo "Dicern Main Pipeline Process Completed"
+			echo "Discern Main Pipeline Process Completed"
 	}	
 }

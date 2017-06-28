@@ -15,7 +15,7 @@
 	
 		<path id="compile.classpath">
 			<fileset dir="${lib.dir}">
-				<include name="*.jar"/>
+				<include name="string_util.jar"/>
 			</fileset>
 		</path>
 	

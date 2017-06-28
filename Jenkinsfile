@@ -7,7 +7,9 @@ node {
 		stage "Generating JUnit Reports"
 			try {
 				bat "ant report"
+				echo "Into try block"
 			} catch(err) {
+				echo "Into Catch block"
 				step([$class: 'JUnitResultArchiver', testResults: 'report/TEST-*.xml'])
 				if (currentBuild.result == 'UNSTABLE') {
 					currentBuild.result = 'FAILURE'

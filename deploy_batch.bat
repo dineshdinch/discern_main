@@ -10,6 +10,6 @@ xcopy E:\Jenkins\main\discern_main\dist\jenkins_main_project.war D:\apache-tomca
 
 cd D:\apache-tomcat-7.0.69\bin
 
-export BUILD_ID=dontKillMe
+BUILD_ID=dontKillMe
 
 startup.bat

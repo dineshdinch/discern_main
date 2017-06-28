@@ -4,6 +4,8 @@ node {
 			echo "Pipeline Initiated for Dicern Main"
 		stage "Git Checkout"
 			git url: "https://github.com/dineshdinch/discern_main.git"
+		stage "Generating JUnit Reports"
+			bat "ant report"
 		stage "Compiling the Project"
 			bat "ant war"
 		stage "Completion Process"    

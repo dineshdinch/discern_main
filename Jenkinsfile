@@ -5,11 +5,17 @@ node {
 		stage "Git Checkout"
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
-			bat "ant report"
+			try {
+				bat "ant report"
+				echo "Coming into try for success build"
+				currentBuild.result = 'SUCCESS'
+			} catch(any) {
+				echo "Coming into catch for failure build"
+				currentBuild.result = 'FAILURE'
+				throw any
+			} 
 		stage "Compiling the Project"
 			bat "ant war"
-		stage "Email Notification"	
-			emailext body: 'Hi', subject: 'Email Test', to: 'dineshrajkumar2011@gmail.com'
 		stage "Completion Process"    
 			echo "Dicern Main Pipeline Process Completed"
 	}	

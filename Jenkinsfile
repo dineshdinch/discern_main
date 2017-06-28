@@ -8,6 +8,8 @@ node {
 			bat "ant report"
 		stage "Compiling the Project"
 			bat "ant war"
+		stage "Email Notification"	
+			emailext body: 'Hi', subject: 'Email Test', to: 'dinesh.rajkumar@treselle.com,rajavignesh.kandhaswamy@treselle.com'
 		stage "Completion Process"    
 			echo "Dicern Main Pipeline Process Completed"
 	}	

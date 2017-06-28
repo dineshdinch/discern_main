@@ -14,6 +14,8 @@ node {
 			}
 		stage "Compiling the Project"
 			bat "ant war"
+		stage "Deploying the Project in Tomcat server"
+			bat "sh deploy_script.sh" 
 		stage "Completion Process"    
 			echo "Discern Main Pipeline Process Completed"
 	}	

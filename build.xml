@@ -15,7 +15,7 @@
 	
 		<path id="compile.classpath">
 			<fileset dir="${lib.dir}">
-				<include name="string_util.jar"/>
+				<include name="*.jar"/>
 			</fileset>
 		</path>
 	
@@ -75,7 +75,7 @@
 				</fileset>
 				<fileset dir="WebContent" />
 				<lib dir="${lib.dir}" />
-				<classes dir="${build.dir}" />
+				<classes dir="${build.java.dir}" />
 			</war>
 		</target>
 		

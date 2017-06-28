@@ -1,10 +1,5 @@
 #!/bin/bash
 
-echo "Stopping Tomcat server"
-cd D:/apache-tomcat-7.0.69/bin
-
-sh shutdown.sh
-
 echo "Removing old war files"
 cd D:/apache-tomcat-7.0.69/webapps
 

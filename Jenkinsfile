@@ -9,6 +9,9 @@ node {
 				bat "ant report"
 			} catch(err) {
 				step([$class: 'JUnitResultArchiver', testResults: 'report/TEST-*.xml'])
+				if (currentBuild.result == 'UNSTABLE') {
+					currentBuild.result = 'FAILURE'
+				}
 				throw err
 			}
 		stage "Compiling the Project"

@@ -5,19 +5,12 @@ node {
 		stage "Git Checkout"
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
-			try {
-				bat "ant test"
-				echo "Into try block"
-			} catch(err) {
-				echo "Into Catch block"
-				step([$class: 'JUnitResultArchiver', testResults: 'report/TEST-*.xml'])
-				if (currentBuild.result == 'UNSTABLE') {
-					currentBuild.result = 'FAILURE'
-				}
-				throw err
-			}
+			bat "ant test"
+			junit 'report/TEST-*.xml'
 		stage "Compiling the Project"
 			bat "ant war"
+		stage "Build EMail Notification"
+			mail bcc: '', body: 'Hi', cc: '', from: '', replyTo: '', subject: 'Email Test', to: 'dinesh.rajkumar@treselle.com'
 		stage "Completion Process"    
 			echo "Dicern Main Pipeline Process Completed"
 	}	

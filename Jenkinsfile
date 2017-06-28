@@ -6,7 +6,7 @@ node {
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
 			try {
-				bat "ant report"
+				bat "ant test"
 				echo "Into try block"
 			} catch(err) {
 				echo "Into Catch block"

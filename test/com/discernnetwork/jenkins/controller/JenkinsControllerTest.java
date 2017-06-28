@@ -18,8 +18,10 @@ public class JenkinsControllerTest {
     @Test
     public void testPrintMessage() {
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
-        mockHttpServletRequest.addParameter("message", "hello");
+        mockHttpServletRequest.addParameter("message", "");
         Object message = this.jenkinsController.printGivenMessage(mockHttpServletRequest);
-        Assert.assertNull(message);	
+        if(message != null) {
+			Assert.assertEquals("Hi!!!Jenkins!!!",message);
+		}	
     }
 }

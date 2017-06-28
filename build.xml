@@ -99,7 +99,7 @@
 	<target name="test" depends="copy" description="unit test">
 				 <delete dir="${target.report.dir}" /> <mkdir dir="${target.report.dir}" />
 			<junit maxmemory="1536m" fork="true" printsummary="yes"
-				haltonfailure="no">
+				haltonfailure="yes">
 				<batchtest todir="${target.report.dir}">
 					<fileset dir="${build.test.dir}">
 						<!--<include name="com/discernnetwork/pqs/controller/*TestController.*" 

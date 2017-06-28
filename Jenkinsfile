@@ -5,7 +5,12 @@ node {
 		stage "Git Checkout"
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
-			bat "ant report"
+			try {
+				bat "ant report"
+			} catch(err) {
+				step([$class: 'JUnitResultArchiver', testResults: 'report/TEST-*.xml'])
+				throw err
+			}
 		stage "Compiling the Project"
 			bat "ant war"
 		stage "Completion Process"    

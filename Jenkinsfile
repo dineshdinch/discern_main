@@ -5,15 +5,7 @@ node {
 		stage "Git Checkout"
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
-			try {
-				bat "ant report"
-				echo "Coming into try for success build"
-				currentBuild.result = 'SUCCESS'
-			} catch(any) {
-				echo "Coming into catch for failure build"
-				currentBuild.result = 'FAILURE'
-				throw any
-			} 
+			bat "ant report"
 		stage "Compiling the Project"
 			bat "ant war"
 		stage "Completion Process"    

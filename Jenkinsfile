@@ -12,9 +12,6 @@ node {
 			} catch(err) {
 				echo "Into catch block"
 				throw err
-				if(currentBuild.result == 'UNSTABLE') {
-					currentBuild.result = 'FAILURE'
-				}
 			}
 		stage "Compiling the Project"
 			bat "ant war"

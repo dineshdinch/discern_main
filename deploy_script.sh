@@ -13,4 +13,4 @@ cp E:/Jenkins/main/discern_main/dist/jenkins_main_project.war D:/apache-tomcat-7
 echo "Starting Tomcat.."
 cd D:/apache-tomcat-7.0.69/bin
 
-sh startup.sh
+bat startup.bat

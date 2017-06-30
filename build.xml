@@ -124,7 +124,7 @@
 		
 		<property name="output.dir" value="${basedir}/output" />
 		<!-- <property name="env.findbugs.home.dir" value="" /> -->
-		<property name="findbugs.home.dir" value="../findbugs" />
+		<property name="findbugs.home.dir" value="../../findbugs" />
 		<property name="findbugs.output.dir" value="${output.dir}/findbugs" />
 		
 		<target name="code-report" depends="findbugs" />

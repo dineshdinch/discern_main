@@ -8,6 +8,6 @@ rmdir jenkins_main_project
 
 xcopy E:\Jenkins\main\discern_main\dist\jenkins_main_project.war D:\apache-tomcat-7.0.69\webapps
 
-cd D:\Dinesh_tasks\Jenkins\jenkins_discern_demo\discern_main
+cd E:\Jenkins\main\discern_main
 
 tomcat_script.bat

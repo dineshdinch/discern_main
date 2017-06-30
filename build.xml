@@ -112,7 +112,7 @@
 			</junit>
 		</target>
 	 
-	    <target name="report" depends="test">
+	    <target name="test-report" depends="test">
 	        <mkdir dir="${target.report.dir}/html"/>
 	        <junitreport todir="${target.report.dir}">
 	            <fileset dir="${target.report.dir}">
@@ -121,7 +121,23 @@
 	            <report todir="${target.report.dir}/html"/>
 	        </junitreport>
 	    </target>
+		
+		<property name="output.dir" value="${basedir}/output" />
+		<property name="findbugs.home.dir" value="${env.findbugs.home.dir}" />
+		<property name="findbugs.output.dir" value="${output.dir}/findbugs" />
+		
+		<target name="code-report" depends="findbugs" />
 	
+		<target name="findbugs">
+			<mkdir dir="${findbugs.output.dir}" />
+			<echo message="${env.findbugs.home.dir}" />
+			<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="${findbugs.home.dir}/lib/findbugs.jar" />
+			<findbugs home="${findbugs.home.dir}" output="xml"
+				outputFile="${findbugs.output.dir}/findbugs.xml">
+				<sourcePath path="${src.dir}" />
+				<class location="${build.dir}" />
+			</findbugs>
+		<target/>
 	
 </project>
 	

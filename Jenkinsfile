@@ -6,7 +6,7 @@ node {
 			git url: "https://github.com/dineshdinch/discern_main.git"
 		stage "Generating JUnit Reports"
 			try {
-				bat "ant report"
+				bat "ant test-report"
 				echo "Into try block"
 			} catch(err) {
 				echo "Into catch block"
@@ -16,6 +16,8 @@ node {
 			bat "ant war"
 		stage "Deploying the Project in Tomcat server"
 			bat "deploy_batch.bat" 
+		stage "Applying Code Check Pluigns"
+			bat "ant code-report"	
 		stage "Completion Process"    
 			echo "Discern Main Pipeline Process Completed"
 	}	

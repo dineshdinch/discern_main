@@ -134,7 +134,7 @@
 			<mkdir dir="${findbugs.output.dir}" />
 			<echo message="${findbugs.home.dir}" />
 			<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
-				classpath="${findbugs.home.dir}/lib/findbugs-ant.jar" />
+				classpath="${findbugs.home.dir}/lib/findbugs-1.3.5.jar" />
 			<findbugs home="${findbugs.home.dir}" output="xml"
 				outputFile="${findbugs.output.dir}/findbugs.xml">
 				<sourcePath path="${src.dir}" />

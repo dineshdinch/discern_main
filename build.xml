@@ -131,7 +131,7 @@
 	
 		<target name="findbugs">
 			<mkdir dir="${findbugs.output.dir}" />
-			<echo message="findbugs.home.dir" />
+			<echo message="${findbugs.home.dir}" />
 			<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
 				classpath="${findbugs.home.dir}/WEB-INF/lib/*.jar" />
 			<findbugs home="${findbugs.home.dir}" output="xml"

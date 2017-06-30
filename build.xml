@@ -124,14 +124,14 @@
 		
 		<property name="output.dir" value="${basedir}/output" />
 		<!-- <property name="env.findbugs.home.dir" value="" /> -->
-		<property name="findbugs.home.dir" value="${env.findbugs.home.dir}" />
+		<property name="findbugs.home.dir" value="findbugs" />
 		<property name="findbugs.output.dir" value="${output.dir}/findbugs" />
 		
 		<target name="code-report" depends="findbugs" />
 	
 		<target name="findbugs">
 			<mkdir dir="${findbugs.output.dir}" />
-			<echo message="env.findbugs.home.dir" />
+			<echo message="findbugs.home.dir" />
 			<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
 				classpath="${findbugs.home.dir}/WEB-INF/lib/*.jar" />
 			<findbugs home="${findbugs.home.dir}" output="xml"

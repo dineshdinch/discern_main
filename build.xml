@@ -130,6 +130,7 @@
 		<target name="code-report" depends="findbugs" />
 		<echo message="${basedir}" />
 		<target name="findbugs">
+			<mkdir dir="${output.dir}" />
 			<mkdir dir="${findbugs.output.dir}" />
 			<echo message="${findbugs.home.dir}" />
 			<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
